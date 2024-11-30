@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Análisis de libros más vendidos Para el genero de ficción en Buscalibre</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+				background-color: #f8f8f8;
+				color: #333;
+			}
+			header {
+				background-color: #ff5a00;
+				color: white;
+				padding: 15px 0;
+				text-align: center;
+			}
+			section {
+				padding: 20px;
+				margin: 15px;
+				background-color: white;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			}
+			h2 {
+				color: #ff5a00;
+			}
+			.descripcion,
+			.datos-interes,
+			.recomendaciones {
+				margin-bottom: 20px;
+			}
+			.tabla-libros {
+				width: 100%;
+				border-collapse: collapse;
+				margin-top: 20px;
+			}
+			.tabla-libros th,
+			.tabla-libros td {
+				border: 1px solid #ddd;
+				padding: 10px;
+				text-align: left;
+			}
+			.tabla-libros th {
+				background-color: #ff5a00;
+				color: white;
+			}
+			.tabla-libros tr:hover {
+				background-color: #f1f1f1;
+			}
+			.tabla-autores,
+			.tabla-editoriales {
+				width: 50%;
+				border-collapse: collapse;
+				margin-top: 20px;
+			}
+
+			.tabla-autores th,
+			.tabla-editoriales th,
+			.tabla-autores td,
+			.tabla-editoriales td {
+				border: 1px solid #ddd;
+				padding: 10px;
+				text-align: left;
+			}
+
+			.tabla-autores th,
+			.tabla-editoriales th {
+				background-color: #ff5a00;
+				color: white;
+			}
+
+			.tabla-autores tr:hover,
+			.tabla-editoriales tr:hover {
+				background-color: #f1f1f1;
+			}
+			.recomendaciones ul {
+				list-style-type: square;
+			}
+			.boton {
+				background-color: #ff5a00;
+				color: white;
+				border: none;
+				padding: 10px 20px;
+				font-size: 16px;
+				cursor: pointer;
+				text-align: center;
+				border-radius: 5px;
+				margin-top: 20px;
+			}
+			.boton:hover {
+				background-color: #e04f00;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Análisis de Libros Más Vendidos</h1>
+			<p>
+				Resultados del scraping y análisis de datos de los libros más vendidos
+			</p>
+		</header>
+
+		<section class="descripcion">
+			<h2>1. Descripción del Análisis</h2>
+			<p>
+				En este análisis se ha recolectado información sobre los libros más
+				vendidos de la categoría "Ciencia Ficción" en la WEB "Buscalibre". Utilizando técnicas de
+				scraping, se obtuvieron datos como el título, autor, editorial, precio,
+				calificaciones y reseñas de los libros. Los datos fueron procesados para
+				proporcionar insights sobre las tendencias actuales en este género
+				literario.
+			</p>
+		</section>
+
+		<section class="datos-interes">
+			<h2>2. Datos Interesantes</h2>
+
+			<h3>Libros Más Vendidos</h3>
+			<table class="tabla-libros">
+				<thead>
+					<tr>
+						<th>Título</th>
+						<th>Autor</th>
+						<th>Editorial</th>
+						<th>Precio</th>
+						<th>Estrellas</th>
+						<th>Calificaciones</th>
+					</tr>
+				</thead>
+				<tbody id="tabla-libros"></tbody>
+			</table>
+
+			<h3>Autores Populares</h3>
+			<table class="tabla-autores">
+				<thead>
+					<tr>
+						<th>Autor</th>
+						<th>Cantidad de Libros</th>
+					</tr>
+				</thead>
+				<tbody id="tabla-autores"></tbody>
+			</table>
+
+			<h3>Editoriales Destacadas</h3>
+			<table class="tabla-editoriales">
+				<thead>
+					<tr>
+						<th>Editorial</th>
+						<th>Cantidad de Libros</th>
+					</tr>
+				</thead>
+				<tbody id="tabla-editoriales"></tbody>
+			</table>
+		</section>
+
+		<section class="recomendaciones">
+			<div class="recommendations">
+				<h2>Recomendaciones de Libros</h2>
+
+				<h3>Género de Ciencia Ficción:</h3>
+				<p>
+					Los libros más vendidos incluyen títulos como "1984", "Ensayo sobre la
+					ceguera", y "Un Mundo Feliz", con una destacada presencia de autores
+					como George Orwell, Aldous Huxley y Haruki Murakami. Esto refleja un
+					gran interés en géneros literarios como la distopía y la ciencia
+					ficción.
+				</p>
+				<h4>Recomendación:</h4>
+				<p>
+					Se sugiere incluir más títulos de ciencia ficción y distopía, así como
+					explorar obras de autores como Philip K. Dick, Ray Bradbury y H.G.
+					Wells, cuyos libros también tienen una fuerte presencia en las listas
+					de los más vendidos.
+				</p>
+
+				<h3>Revistas Literarias:</h3>
+				<p>
+					Aunque las revistas no son el enfoque principal, la popularidad de
+					"After Dinner Conversation Magazine" indica que existe un nicho para
+					publicaciones periódicas que podrían ser de interés.
+				</p>
+				<h4>Recomendación:</h4>
+				<p>
+					Considerar incluir revistas literarias en las recomendaciones,
+					especialmente aquellas dedicadas a discusiones filosóficas y
+					literarias, ya que podrían atraer a un público específico.
+				</p>
+
+				<h2>Recomendaciones de Editoriales</h2>
+
+				<h3>Editoriales Autopublicadas:</h3>
+				<p>
+					La editorial "Createspace Independent Publishing Platform" domina la
+					lista, con 1566 libros publicados, seguida por Independently Published
+					y Lulu.Com. Estas editoriales sugieren que los libros autopublicados
+					tienen una fuerte presencia en el mercado, y muchos de estos libros
+					pueden ofrecer opciones únicas y de nicho.
+				</p>
+				<h4>Recomendación:</h4>
+				<p>
+					Destacar libros de estas editoriales en futuras recomendaciones, ya
+					que pueden ofrecer títulos innovadores y diferentes de los de
+					editoriales más grandes.
+				</p>
+
+				<h3>Diversificación Editorial:</h3>
+				<p>
+					A pesar del dominio de editoriales grandes como Blanco & Negro y
+					Tusquets, las editoriales menos conocidas también tienen una presencia
+					notable, como Minotauro con 291 libros publicados.
+				</p>
+				<h4>Recomendación:</h4>
+				<p>
+					Incluir títulos de editoriales menos conocidas para ofrecer una mayor
+					diversidad en las recomendaciones y promover nuevas voces en el
+					mercado literario.
+				</p>
+
+				<h2>Recomendaciones de Autores</h2>
+
+				<h3>Autores Clásicos de Ciencia Ficción:</h3>
+				<p>
+					Philip K. Dick, Ray Bradbury y H.G. Wells son autores populares, con
+					51, 48 y 41 libros publicados respectivamente. Estos autores siguen
+					siendo altamente valorados por los lectores de ciencia ficción, lo que
+					refleja el interés en la literatura clásica de este género.
+				</p>
+				<h4>Recomendación:</h4>
+				<p>
+					Incluir más obras de estos autores y explorar otros clásicos de
+					ciencia ficción, ya que podrían seguir siendo populares entre los
+					lectores. Además, explorar nuevos autores que sigan el estilo de estos
+					maestros.
+				</p>
+
+				<h3>Nuevas Voces y Diversificación:</h3>
+				<p>
+					Aunque algunos autores menos conocidos tienen ventas bajas, podrían
+					tener un mercado potencial, especialmente entre los lectores que
+					buscan narrativas innovadoras.
+				</p>
+				<h4>Recomendación:</h4>
+				<p>
+					Considerar la inclusión de nuevos autores con propuestas frescas, ya
+					que pueden atraer a un público en busca de nuevas perspectivas y
+					estilos.
+				</p>
+
+				<h2>Recomendaciones sobre Precios</h2>
+
+				<h3>Rango de Precios:</h3>
+				<p>
+					Los precios de los libros están concentrados principalmente en el
+					rango de 50,000 a 100,000 pesos, siendo este el rango más común.
+				</p>
+				<h4>Recomendación:</h4>
+				<p>
+					Para atraer a una mayor audiencia, se podría ofrecer una variedad de
+					libros dentro de este rango de precios, que es el más frecuente y
+					accesible para la mayoría de los lectores. Además, se puede considerar
+					incluir algunos libros de precios más bajos (por debajo de 50,000
+					pesos) y algunos más altos para atraer a diferentes segmentos del
+					mercado.
+				</p>
+
+				<h3>Diversificación de Precios:</h3>
+				<p>
+					Aunque la mayoría de los libros se encuentran en el rango medio de
+					precios, también hay libros más costosos (hasta 200,000 pesos), lo que
+					sugiere una diversidad en las ediciones y formatos.
+				</p>
+				<h4>Recomendación:</h4>
+				<p>
+					Ofrecer una gama de opciones de precios, desde títulos más accesibles
+					hasta ediciones premium para atraer tanto a los lectores más sensibles
+					al precio como a los que buscan una experiencia literaria más
+					exclusiva.
+				</p>
+			</div>
+		</section>
+
+		<script>
+			// Cargar el archivo JSON de manera asíncrona
+			fetch("libros_analisis.json")
+				.then((response) => response.json())
+				.then((data) => {
+					// Insertar los datos de los libros más vendidos
+					const tabla = document.getElementById("tabla-libros");
+					data.top_5_libros.forEach((libro) => {
+						const row = tabla.insertRow();
+						row.innerHTML = `
+                    <td>${libro.titulo}</td>
+                    <td>${libro.autor}</td>
+                    <td>${libro.editorial}</td>
+                    <td>${libro.precio}</td>
+                    <td>${libro.estrellas}</td>
+                    <td>${libro.cantidad_calificaciones}</td>
+                `;
+					});
+
+					// Insertar autores populares en su tabla
+					const tablaAutores = document.getElementById("tabla-autores");
+					data.autores_populares.forEach((autor) => {
+						const row = tablaAutores.insertRow();
+						row.innerHTML = `
+                    <td>${autor.autor}</td>
+                    <td>${autor.Cantidad_de_Libros}</td>
+                `;
+					});
+
+					// Insertar editoriales destacadas en su tabla
+					const tablaEditoriales = document.getElementById("tabla-editoriales");
+					data.editoriales_destacadas.forEach((editorial) => {
+						const row = tablaEditoriales.insertRow();
+						row.innerHTML = `
+                    <td>${editorial.Editorial}</td>
+                    <td>${editorial.Cantidad_de_Libros}</td>
+                `;
+					});
+				})
+				.catch((error) => console.error("Error al cargar el JSON:", error));
+		</script>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+[
+    {
+        "titulo": "1984",
+        "autor": "George Orwell",
+        "editorial": "Blanco & Negro",
+        "precio": 39760,
+        "estrellas": 5.0,
+        "cantidad_calificaciones": "23"
+    },
+    {
+        "titulo": "Ensayo sobre la ceguera",
+        "autor": "José Saramago",
+        "editorial": "Debolsillo",
+        "precio": 32830,
+        "estrellas": 5.0,
+        "cantidad_calificaciones": "77"
+    },
+    {
+        "titulo": "Kafka en la Orilla",
+        "autor": "Haruki Murakami",
+        "editorial": "Tusquets",
+        "precio": 45000,
+        "estrellas": 5.0,
+        "cantidad_calificaciones": "68"
+    },
+    {
+        "titulo": "Cartas del Diablo a Su Sobrino",
+        "autor": "C. S. Lewis",
+        "editorial": "HarperOne",
+        "precio": 55396,
+        "estrellas": 5.0,
+        "cantidad_calificaciones": "13"
+    },
+    {
+        "titulo": "Un Mundo Feliz",
+        "autor": "Aldous Huxley",
+        "editorial": "Skala",
+        "precio": 13125,
+        "estrellas": 4.5,
+        "cantidad_calificaciones": "37"
+    }
+]
